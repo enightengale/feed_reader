@@ -27,32 +27,63 @@ $(function() {
         });
 
 
-        /* TODO: Write a test that loops through each feed
+        /* finished: Write a test that loops through each feed
          * in the allFeeds object and ensures it has a URL defined
          * and that the URL is not empty.
          */
+         allFeeds.forEach(function(feed){
+           it("have a URL", function() {
+             expect(feed).toBeDefined();
+             expect(feed.url).not.toBe("");
+           });
+         });
 
-
-        /* TODO: Write a test that loops through each feed
+        /* finished: Write a test that loops through each feed
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
+         allFeeds.forEach(function(name){
+           it("have a name", function() {
+             expect(name).toBeDefined();
+             expect(name.name).not.toBe("");
+           });
+         });
     });
 
 
-    /* TODO: Write a new test suite named "The menu" */
+    /* finished: Write a new test suite named "The menu" */
+    describe("The menu", function(){
+      /* finsished: Write a test that ensures the menu element is
+       * hidden by default. You'll have to analyze the HTML and
+       * the CSS to determine how we're performing the
+       * hiding/showing of the menu element.
+       */
+       var menu = document.body.classList.contains(".menu-hidden");
 
-        /* TODO: Write a test that ensures the menu element is
-         * hidden by default. You'll have to analyze the HTML and
-         * the CSS to determine how we're performing the
-         * hiding/showing of the menu element.
-         */
+
+      it("hides by default", function(){
+        expect(menu).toBe(false);
+      });
 
          /* TODO: Write a test that ensures the menu changes
           * visibility when the menu icon is clicked. This test
           * should have two expectations: does the menu display when
           * clicked and does it hide when clicked again.
           */
+          var icon = document.querySelector(".menu-icon-link");
+
+          it("changes visibility when clicked", function(){
+            icon.addEventListener("click", function(){
+              if(menu === false){
+                expect(menu).toBe(true);
+              }
+              if(menu === true){
+                expect(menu).toBe(false);
+              }
+            });
+          });
+        });
+
 
     /* TODO: Write a new test suite named "Initial Entries" */
 
