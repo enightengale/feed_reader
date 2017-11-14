@@ -4,4 +4,4 @@ In this project I learned how to use Jasmine, a JavaScript library, to test my a
 
 # How to open this project?
 
-Download this project and open the index.html file. you can also use this [link](https://enightengale.github.io/feed_reader/).
+Download this project and open the index.html file. You can also use this [link](https://enightengale.github.io/feed_reader/) to open the application.
