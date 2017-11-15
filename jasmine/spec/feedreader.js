@@ -33,7 +33,7 @@ $(function() {
          */
          allFeeds.forEach(function(feed){
            it("have a URL", function() {
-             expect(feed).toBeDefined();
+             expect(feed.url).toBeDefined();
              expect(feed.url).not.toBe("");
            });
          });
@@ -44,7 +44,7 @@ $(function() {
          */
          allFeeds.forEach(function(name){
            it("have a name", function() {
-             expect(name).toBeDefined();
+             expect(name.name).toBeDefined();
              expect(name.name).not.toBe("");
            });
          });
@@ -58,7 +58,7 @@ $(function() {
        * the CSS to determine how we're performing the
        * hiding/showing of the menu element.
        */
-       var menu = document.body.classList.contains(".menu-hidden");
+       var menu = $(".menu-hidden");
 
 
       it("hides by default", function(){
@@ -98,9 +98,9 @@ $(function() {
        });
 
 
-        it('there is at least 1 item within the .feed container', function() {
-            var feedEntryNumber = $('.entry').length;
-            expect(feedEntryNumber).not.toBe(0);
+        it("there is at least 1 item within the .feed container", function() {
+          var feedNumber = $(".feed-list").length;
+          expect(feedNumber).not.toBe(0);
         });
     });
 
@@ -115,12 +115,12 @@ $(function() {
 
 
         beforeEach(function(done) {
-            loadFeed(1, function() {
-                initialFeed = $('.feed').html();
-                loadFeed(2, function() {
-                    done();
-                });
+          loadFeed(1, function() {
+            initialFeed = $(".feed").html();
+            loadFeed(2, function() {
+              done();
             });
+          });
         });
 
 
@@ -129,11 +129,11 @@ $(function() {
         });
 
 
-        it('the content actually changes by the loadFeed function', function() {
-            expect(initialFeed).toBeDefined();
-            changedFeed = $('.feed').html();
-            expect(changedFeed).toBeDefined();
-            expect(changedFeed).not.toEqual(initialFeed);
+        it("the content actually changes by the loadFeed function", function() {
+          expect(initialFeed).toBeDefined();
+          changedFeed = $(".feed").html();
+          expect(changedFeed).toBeDefined();
+          expect(changedFeed).not.toEqual(initialFeed);
         });
     });
 }());
