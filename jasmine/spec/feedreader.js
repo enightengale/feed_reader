@@ -58,11 +58,9 @@ $(function() {
        * the CSS to determine how we're performing the
        * hiding/showing of the menu element.
        */
-       var menu = $(".menu-hidden");
 
-
-      it("hides by default", function(){
-        expect(menu).toBe(false);
+       it("changes visibility when clicked", function(){
+         expect($("body").hasClass('menu-hidden')).toBe(false);
       });
 
          /* finished: Write a test that ensures the menu changes
@@ -74,10 +72,10 @@ $(function() {
 
           it("changes visibility when clicked", function(){
             icon.click();
-            expect($('body').hasClass('menu-hidden')).toBe(false);
+            expect($("body").hasClass("menu-hidden")).toBe(false);
 
             icon.click();
-            expect($('body').hasClass('menu-hidden')).toBe(true);
+            expect($("body").hasClass("menu-hidden")).toBe(true);
           });
         });
 
@@ -99,7 +97,7 @@ $(function() {
 
 
         it("there is at least 1 item within the .feed container", function() {
-          var feedNumber = $(".feed-list").length;
+          var feedNumber = $(".feed .entry").length;
           expect(feedNumber).not.toBe(0);
         });
     });
