@@ -59,8 +59,8 @@ $(function() {
        * hiding/showing of the menu element.
        */
 
-       it("changes visibility when clicked", function(){
-         expect($("body").hasClass('menu-hidden')).toBe(false);
+       it("is hidden by default", function(){
+         expect($("body").hasClass('menu-hidden')).toBe(true);
       });
 
          /* finished: Write a test that ensures the menu changes
