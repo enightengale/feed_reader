@@ -70,12 +70,12 @@ $(function() {
           */
           var icon = $(".menu-icon-link");
 
-          it("changes visibility when clicked", function(){
-            icon.click();
-            expect($("body").hasClass("menu-hidden")).toBe(false);
-
+          it("is hidden by default", function(){
             icon.click();
             expect($("body").hasClass("menu-hidden")).toBe(true);
+
+            icon.click();
+            expect($("body").hasClass("menu-hidden")).toBe(false);
           });
         });
 
